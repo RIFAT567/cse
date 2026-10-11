@@ -116,21 +116,60 @@
 #     print("Not disarium number")
 
 # Write a Python program that prompts the user to input a positive integer number and print the Grade Letter.
-marks = int(input())
-grade = ""
-if marks >= 0 and marks <= 100:
-    if marks >= 80:
-        grade = "A+"
-    if marks >= 70 and marks < 80:
-        grade = "A"
-    if marks >= 60 and marks < 70:
-        grade = "A-"
-    if marks >= 50 and marks < 60:
-        grade = "B"
-    if marks >= 40 and marks < 50:
-        grade = "C"
-    if marks < 40:
-        grade = "F"
-    print(grade)
-else:
-    print("Wrong number")
+# marks = int(input())
+# grade = ""
+# if marks >= 0 and marks <= 100:
+#     if marks >= 80:
+#         grade = "A+"
+#     if marks >= 70 and marks < 80:
+#         grade = "A"
+#     if marks >= 60 and marks < 70:
+#         grade = "A-"
+#     if marks >= 50 and marks < 60:
+#         grade = "B"
+#     if marks >= 40 and marks < 50:
+#         grade = "C"
+#     if marks < 40:
+#         grade = "F"
+#     print(grade)
+# else:
+#     print("Wrong number")
+
+# Given two numerical values find out the relationship between them First line of the input file is an integer t (t < 15) which denotes how many sets of inputs are there. Each of the next t lines contain two integers a and b. For each line of input produce one line of output. This line contains any one of the relational operators ‘>’, ‘<’ or ‘=’, which indicates the relation that is appropriate for the given two numbers.
+
+# with open("input.txt") as file:
+#     data = file.readlines()
+# cnt = int(data[0].strip())
+# current = []
+# rltn = []
+# for i in data[1:cnt+1]:
+#     current = i.strip().split()
+#     if current[0] > current[1]:
+#         rltn.append(">")
+#     elif current[0] == current[1]:
+#         rltn.append("=")
+#     else:
+#         rltn.append("<")
+# with open("output.txt", "w") as output:
+#     output.write("\n".join(rltn))
+
+# Write a Python program that takes a list of integers from user and print all the integers in reverse order
+
+# n = input().split()
+# print(" ".join(n[::-1]))
+
+# Write a Python program that takes a list of integers from user and print square of all the integers.
+
+# n = input().split()
+# m = [str(int(i)**2) for i in n]
+# print(" ".join(m))
+
+# Write a Python program that takes two list of integers from user and print integers from list1 in original order and integers from list2 in reverse order.
+
+with open("input.txt") as input:
+    data = input.readlines()
+    list1 = data[0].strip().split()
+    list2 = data[1].strip().split()
+    for i,j in zip(list1,list2):
+        print(i,j)
+    
