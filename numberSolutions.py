@@ -166,10 +166,54 @@
 
 # Write a Python program that takes two list of integers from user and print integers from list1 in original order and integers from list2 in reverse order.
 
-with open("input.txt") as input:
-    data = input.readlines()
-    list1 = data[0].strip().split()
-    list2 = data[1].strip().split()
-    for i,j in zip(list1,list2):
-        print(i,j)
+# with open("input.txt") as input:
+#     data = input.readlines()
+#     list1 = data[0].strip().split()
+#     list2 = data[1].strip().split()
+#     for i,j in zip(list1,reversed(list2)):
+#         print(i,j)
     
+# Write a Python program that takes a list of integers from user and print all the odd & even integers in ascending order separately.
+
+# n = map(int, input().split())
+# even = list()
+# odd = list()
+# for num in n:
+#     if num%2==0:
+#         even.append(num)
+#     else:
+#         odd.append(num)
+# print(f'even: {" ".join(map(str, sorted(even)))}')
+# print(f'odd: {" ".join(map(str, sorted(odd)))}')
+
+# Write a Python program that takes two list of integers from user in two line and print all the common integers between those two list in ascending order.
+
+# with open("input.txt") as input_file:
+#     data = input_file.readlines()
+#     set1 = set(map(int, data[0].split()))
+#     set2 = set(map(int, data[1].split()))
+#     result = sorted(set1.intersection(set2))
+#     print(*result)
+
+# Write a Python program that takes two list of integers from user in two line and print all the pairwise difference between those two list in ascending order.
+
+# set1 = list(map(int, input().strip().split()))
+# set2 = list(map(int, input().strip().split()))
+# print(set1)
+# print(set2)
+# differences = []
+# for i,j in zip(set1, set2):
+#     print(f'difference of {i} and {j}', abs(i-j))
+#     differences.append(abs(i-j))
+# differences.sort()
+# print(*differences)
+
+# Write a Python program that takes multi line of input from user where each line contains space separted list of integers. Your program should combine all the integer numbers and print them in descending order.
+
+# with open("input.txt") as file:
+#     lines = [line.split() for line in file]
+
+# numbers = [int(number) for line in lines for number in line]
+# numbers.sort(reverse=True)
+# print(*numbers)
+
