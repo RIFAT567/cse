@@ -257,3 +257,34 @@
 # print(f'avg (even): {sum(even)/len(even)}')
 # print(f'avg (odd): {sum(odd)/len(odd)}')
 
+# Write a Python program that takes two numbers 𝑛, 𝑚 and a list of 𝑛𝑋𝑚 integers from user in a single line. Your program print out those integers as a 𝑛𝑋𝑚 matrix.
+
+# with open("input.txt") as input:
+#     data = input.readlines()
+#     n,m = map(int, data[0].strip().split())
+#     nums = data[1].strip().split()
+#     print(nums)
+#     row = 0
+#     for i in range(n):
+#         for j in range(m):
+#             print(nums[row+i+j], end=" ")
+#         row+=4
+#         print()
+
+# Write a Python program that takes a matrix (𝑛𝑋𝑚 where 𝑛 lines and each line has 𝑚 integer numbers) as input. Your program should print out the transpose of that matrix.
+
+# with open("input.txt") as input:
+#     data = input.readlines()
+#     init_matrix = [data[i].strip().split() for i in range(len(data))]
+#     col_num = len(init_matrix)
+#     matrix = [
+#         [init_matrix[j][i] for j in range(col_num)] for i in range(len(init_matrix[0]))
+#     ]
+#     for i in range(len(matrix)):
+#         for j in matrix[i]:
+#             print(j, end=" ")
+#         print()
+
+# Write a Python program that takes a list of integers from user in a single line. Your program print out all possible pair wise combination between those integers.
+
+# set = list(map(int, input()))
