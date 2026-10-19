@@ -217,3 +217,43 @@
 # numbers.sort(reverse=True)
 # print(*numbers)
 
+# Write a Python program that takes a list of integers from user. Your program print out sum, max, min and avg of all integers.
+
+# n = list(map(int, input().split()))
+# print(f"sum: {sum(n)}")
+# print(f"max: {max(n)}")
+# print(f"min: {min(n)}")
+# print(f"avg: {sum(n)/len(n)}")
+
+# Write a Python program that takes a list of integers from user. Your program should count all the unique integers and print them in ascending order by their frequency.
+
+# n = list(map(int, input().split()))
+# dict = {i:n.count(i) for i in n}
+# sorted_dict = sorted(dict.items(), key=lambda x: x[1])
+# for key, value in sorted_dict:
+#     print(f"{key}: {value}")
+
+# Write a Python program that takes a list of integers from user. Your program should count all the unique pair of integers and print them in ascending order by their frequency.
+
+# from collections import Counter
+
+# n = list(map(int, input().split()))
+# pair_counts = Counter(zip(n, n[1:]))
+# sorted_pairs = sorted(pair_counts.items(), key=lambda item: item[1])
+# for key, value in sorted_pairs:
+#     print(*key, value)
+
+# Write a Python program that takes a list of integers from user. Your program print out sum, max, min and avg of all odd integers and even integers separately.
+
+# n = list(map(int, input().split()))
+# even = [i for i in n if i%2==0]
+# odd = [i for i in n if i%2!=0]
+# print(f'sum (even): {sum(even)}')
+# print(f'sum (odd): {sum(odd)}')
+# print(f'max (even): {max(even)}')
+# print(f'max (odd): {max(odd)}')
+# print(f'min (even): {min(even)}')
+# print(f'min (odd): {min(odd)}')
+# print(f'avg (even): {sum(even)/len(even)}')
+# print(f'avg (odd): {sum(odd)/len(odd)}')
+
