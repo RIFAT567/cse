@@ -287,4 +287,48 @@
 
 # Write a Python program that takes a list of integers from user in a single line. Your program print out all possible pair wise combination between those integers.
 
-# set = list(map(int, input()))
+# set = list(map(int, input().split()))
+# pairs = list()
+# index = 0
+# for num in set:
+#     for i in set[index+1:]:
+#         pairs.append([str(num), str(i)])
+#     index+=1
+# print(pairs)
+# for pair in pairs:
+#     print(" ".join(pair))
+
+# Write a Python program that takes a list of integers from user in a single line. Your program print out all possible pair wise permutation between those integers.
+
+# with open("input.txt") as input:
+#     data = input.read()
+#     print(data)
+#     set = list(data.split())
+#     pairs = list()
+#     print(set)
+#     for num in set:
+#         for i in set:
+#             if num==i:
+#                 continue
+#             else:
+#                 pairs.append([num, i])
+#     for pair in pairs:
+#         print(" ".join(pair))
+
+# Write a Python program that takes a list of integers from user. Your program print out the integers which  occurred only once in the list.
+
+# numbers = list(map(int, input().split()))
+# num_count = {x:numbers.count(x) for x in numbers}
+# print(num_count)
+# ones = [str(key) for key in num_count.keys() if num_count[key]==1]
+# print(" ".join(ones))
+
+# Given an integer x, return true if x is a palindrome, and false otherwise.
+
+# num = input()
+# if num == num[::-1]:
+#     print("true")
+# else:
+#     print("false")
+
+# Given an integer num, repeatedly add all its digits until the result has only one digit, and return it. Explanation: For example, given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has only one digit, return it.
