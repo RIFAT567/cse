@@ -1,3 +1,5 @@
+# Write a program that takes an integer value input and print its binary, octal and hexadecimal value as output.
+
 # num = int(input())
 # binary_num = bin(num)[2:]  # Convert to binary and remove the '0b' prefix
 # octal_num = oct(num)[2:]   # Convert to octal and remove the '0o' prefix
@@ -6,7 +8,7 @@
 # print(f"Octal: {octal_num}")
 # print(f"Hexadecimal: {hexadecimal_num}")
 
-# # Write a program that prompts the user to input two numbers and display its HCF. The Highest Common Factor (HCF) also called the Greatest Common Divisor (GCD) of two whole numbers, is the largest whole number that’s a factor of both of them.
+# Write a program that prompts the user to input two numbers and display its HCF. The Highest Common Factor (HCF) also called the Greatest Common Divisor (GCD) of two whole numbers, is the largest whole number that’s a factor of both of them.
 
 # def find_hcf(x, y):
 #     while(y):
@@ -495,3 +497,103 @@
 # print(*result)
 
 # Write a Python program that reads n students’ names and their scores (one per line). Store them as a dictionary mapping each name to a list of their scores (a student may appear multiple times). Print each student’s name and their average score, sorted alphabetically by name. Round averages to 2 decimal places.
+
+# with open("input.txt") as input:
+#     data = input.readlines()
+#     result = dict()
+#     avgs = dict()
+#     for i in range(len(data)):
+#         name,score = data[i].strip().split()
+#         if name in result.keys():
+#             result[name].append(int(score))
+#         else:
+#             result[name] = [int(score)]
+#     for name,score in result.items():
+#         avg = sum(score)/len(score)
+#         print(f'{name}: {avg:.2f}')
+        
+
+# Write a Python program that takes a list of integers from the user. Your program should use a list of tuples to find and print all integers that appear more than once (duplicates), along with their frequency. Print results in ascending order of the integer value. If no duplicates exist, print No duplicates.
+
+# numbers = list(map(int, input().split()))
+# nai = list()
+# for index,number in enumerate(numbers):
+#     nai.append((number, index))
+# nai.sort()
+# for num in nai:
+#     print(f'{num[0]} (index {num[1]})')
+
+# Write a Python program that takes a list of integers and finds the “Majority Element” (the element that appears more than 𝑛2 times, where 𝑛 is the size of the list). If no such element exists, print No Majority Element.
+
+# numbers = list(map(int, input().split()))
+# count = {}
+
+# for num in numbers:
+#     count[num] = count.get(num, 0) + 1
+
+# if count:
+#     candidate = max(count, key=count.get)
+#     if count[candidate] > len(numbers) // 2:
+#         print(candidate)
+#     else:
+#         print("No Majority Element")
+# else:
+#     print("No Majority Element")
+
+# Write a Python program that takes a list of integers and count the occurrence of 1′s and 0′s in the binary representation of each integer, then print the total count of 1′s and 0′s across all integers.
+
+# numbers = list(map(int, input().split()))
+# ones = list()
+# zeros = list()
+# for number in numbers:
+#     binary = bin(number)[2:]
+#     ones.append(binary.count("1"))
+#     zeros.append(binary.count("0"))
+
+# print(f'1:{sum(ones)} 0:{sum(zeros)}')
+
+# Write a Python program that takes a list of integers and separates them into two lists: one containing odd number of 1′s in their binary representation and the other containing even number of 1′s. Print both lists.
+
+# numbers = list(map(int, input().split()))
+# odds = list()
+# evens = list()
+# for num in numbers:
+#     binary = bin(num)[2:]
+#     if binary.count("1")%2==0:
+#         evens.append(str(num))
+#     else:
+#         odds.append(str(num))
+# print(f'ODD: {" ".join(odds)}')
+# print(f'EVEN: {" ".join(evens)}')
+
+# Write a Python program that takes a list of integers and separates them into two lists: one containing integers that are powers of 2 and the other containing integers that are not. Print both lists.
+
+# numbers = list(map(int, input().split()))
+# powers = list()
+# non_powers = list()
+# for num in numbers:
+#     binary = bin(num)[2:]
+#     if binary.count("1")==1:
+#         powers.append(str(num))
+#     else:
+#         non_powers.append(str(num))
+# print(f'Powers of 2: {" ".join(powers)}')
+# print(f'Not powers of 2: {" ".join(non_powers)}')
+
+# Write a program that generates a random number and asks the user to guess what the number is. If the user’s guess is higher than the random number, the program should display “Too high, try again.” If the user’s guess is lower than the random number, the program should display “Too low, try again.” The program should use a loop that repeats until the user correctly guesses the random number. Program should count and display number of tries to win the game.
+
+# import random
+# number = random.randint(0, 100)
+# guess = False
+# guesses = 1
+# while(guess!=True):
+#     num = int(input("Guess a number between 0 and 100: "))
+#     if num == number:
+#         guess = True
+#     else:
+#         guesses += 1
+#         if num>number:
+#             print("Too high, try again.")
+#         elif num<number:
+#             print("Too low, try again.")
+# print(f'Guessed the number correctly in {guesses} attempts')
