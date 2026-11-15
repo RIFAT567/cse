@@ -332,3 +332,166 @@
 #     print("false")
 
 # Given an integer num, repeatedly add all its digits until the result has only one digit, and return it. Explanation: For example, given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has only one digit, return it.
+
+# num = list(map(int, input()))
+# result = num.copy()
+# while (len(result)) != 1:
+#     result = list(map(int, str(sum(result))))
+# print(*result)
+
+# Given a list of integer numbers, move all 0′s to the end of it while maintaining the relative order of the non-zero elements.
+
+# num = list(input().split())
+# non_zeros = [n for n in num if n!="0"]
+# zeros = [n for n in num if n=="0"]
+# print(" ".join(non_zeros), " ".join(zeros))
+
+# The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is, F(0) = 0, F(1) = 1, F(n) = F(n - 1) + F(n - 2), for n > 1. Given n, calculate F(n).
+
+
+# num = int(input())
+# a = 0 
+# b = 1
+
+# for n in range(num):
+#     a,b = b, a+b
+# print(a)
+
+# Given a positive integer num, return true if num is a perfect square or false otherwise. A perfect square is an integer that is the square of an integer. In other words, it is the product of some integer with itself. You must not use any built-in library function, such as sqrt.
+
+# num = int(input())
+# isPs = False
+# for n in range(num+1):
+#     if n * n == num:
+#         isPs = True
+#         exit
+# print(isPs)
+
+# Write a Python program that takes a list of integers from the user in a single line. Your program should find and print the second largest and second smallest unique values in the list. If there are not enough unique values, print Not possible.
+
+# num = list(map(int, input().split()))
+# current_largest = 0
+# last_largest = 0
+# current_smallest = None
+# last_smallest = None
+
+# for n in num:
+#     if n>current_largest:
+#         last_largest=current_largest
+#         current_largest=n
+#     if current_smallest is None or n < current_smallest:
+#         last_smallest=current_smallest
+#         current_smallest=n
+#     elif n > current_smallest and (last_smallest is None or n < last_smallest):
+#         last_smallest=n
+# print("second largest: ", last_largest if last_largest != 0 else "Not possible")
+# print("second smallest: ", last_smallest if last_smallest is not None else "Not possible")
+
+# Write a Python program that takes a list of integers from the user. Your program should rotate the list to the right by k positions, where k is read on a second line. Print the resulting list on a single line separated by spaces.
+
+# num = list(map(int, input().split()))
+# shift = int(input())
+
+# print(" ".join(map(str, num[shift+1:])), " ".join(map(str, num[:shift+1])))
+
+# Write a Python program that takes a list of integers from the user in a single line. Your program should find all pairs of integers whose sum equals a target value k, read on a second line. Print each pair on a separate line in ascending order of the first element. If no such pair exists, print No pairs found.
+
+# numbers = list(map(int, input().split()))
+# k = int(input())
+# pairs = list()
+# for i in range(len(numbers)):
+#     for j in numbers[i:]:
+#         if numbers[i]+j==k:
+#             pairs.append((numbers[i],j))
+# for pair in pairs:
+#     print(*pair)
+# if len(pairs)==0:
+#     print("No pairs found")
+
+# Write a Python program that takes a list of integers from the user. Using a dictionary, group the integers into three categories: negative, zero, and positive. Print the count of each group and the numbers in each group in the order they appeared in the input.
+
+
+# numbers = list(map(int, input().split()))
+# groups = {
+#     "negative": list(),
+#     "zero": list(),
+#     "positive": list()
+# }
+
+# for num in numbers:
+#     if num<0:
+#         groups["negative"].append(str(num))
+#     elif num>0:
+#         groups["positive"].append(str(num))    
+#     elif num==0:
+#         groups["zero"].append(str(num))    
+
+# print(f'Negative ({len(groups["negative"])}): {" ".join(groups["negative"])}')
+# print(f'Zero ({len(groups["zero"])}): {" ".join(groups["zero"])}')
+# print(f'Positive ({len(groups["positive"])}): {" ".join(groups["positive"])}')
+
+# Write a Python program that takes a list of integers from the user in a single line. Your program should find the length of the longest consecutive sequence of integers (values need not be adjacent in the list). Print the length and the sequence in sorted order.
+
+# numbers = set(map(int, input().split()))
+# sequence = list()
+# temp = list()
+# sort = sorted(numbers)
+# temp.append(str(sort[0]))
+# for i in range(len(sort)):
+#     if i != len(sort)-1:
+#         if sort[i+1] - sort[i] == 1:
+#             temp.append(str(sort[i+1]))
+#         else:
+#             if len(temp) > len(sequence):
+#                 sequence = temp.copy()
+#                 temp.clear()
+#                 temp.append(str(sort[i+1]))
+# if len(temp) > len(sequence):
+#     sequence = temp.copy()
+#     temp.clear()
+# print(f'Length: {len(sequence)}')
+# print(f'Sequence: {" ".join(sequence)}')
+
+# Write a Python program that takes two lists of integers from the user on two separate lines. Using set operations, print the union, intersection, and difference (list1 − list2) of the two lists, each in ascending order on a separate line.
+
+# set1 = set(map(int, input().split()))
+# set2 = set(map(int, input().split()))
+
+# print(f'Union: {" ".join(map(str, set1.union(set2)))}')
+# print(f'Intesection: {" ".join(map(str, set1.intersection(set2)))}')
+# print(f'Difference: {" ".join(map(str, set1.difference(set2)))}')
+
+# Write a Python program that takes a list of integers from the user. Your program should use a dictionary to find and print all integers that appear more than once (duplicates), along with their frequency. Print results in ascending order of the integer value. If no duplicates exist, print No duplicates.
+
+# numbers = list(map(int, input().split()))
+# uniques = set(numbers)
+# freq = dict()
+# duplicates = 0
+# for unique in uniques:
+#     freq[unique] = numbers.count(unique)
+# for key, value in freq.items():
+#     if value > 1:
+#         duplicates+=1
+#         print(f'{key} appears {value} times')
+# if duplicates==0:
+#     print("No duplicates")
+
+# Write a Python program that takes a list of integers from the user. Your program should split the list into two halves. Merge them back by interleaving elements — first element of the first half, first element of the second half, second element of the first half, and so on. If the list has an odd number of elements, the extra element goes at the end.
+
+# numbers = list(map(int, input().split()))
+# result = list()
+# odd = False
+# if len(numbers)%2==0:
+#     halve1 = numbers[:len(numbers)//2]
+#     halve2 = numbers[len(numbers)//2:]
+# else: 
+#     odd = True
+#     halve1 = numbers[:(len(numbers)-1)//2]
+#     halve2 = numbers[(len(numbers)-1)//2:-1]
+# for i,j in zip(halve1, halve2):
+#     result.extend([i,j])
+# if odd:
+#     result.append(numbers[-1])
+# print(*result)
+
+# Write a Python program that reads n students’ names and their scores (one per line). Store them as a dictionary mapping each name to a list of their scores (a student may appear multiple times). Print each student’s name and their average score, sorted alphabetically by name. Round averages to 2 decimal places.
